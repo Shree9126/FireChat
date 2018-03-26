@@ -1,0 +1,96 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.mindnotix.mnxchats"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 2
+        versionName "1.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "https://dl.bintray.com/hani-momanii/maven" }
+    jcenter()
+    google()
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //   compile project(':supernova-emoji-library')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    //design
+    compile 'com.android.support:design:25.3.1'
+    //Cardview
+    compile 'com.android.support:cardview-v7:25.3.1'
+    //constrainlayout
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    //Recyclerview for list
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    //Emojis
+    compile 'hani.momanii.supernova_emoji_library:supernova-emoji-library:0.0.2'
+    //Activie android for Local DB maintanance
+    compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
+    //Smack API
+    compile 'org.igniterealtime.smack:smack-android:4.1.5'
+    compile 'org.igniterealtime.smack:smack-tcp:4.1.5'
+    compile 'org.igniterealtime.smack:smack-extensions:4.1.5'
+   /* compile 'org.igniterealtime.smack:smack-android:4.1.7'
+    compile 'org.igniterealtime.smack:smack-tcp:4.1.7'
+    compile 'org.igniterealtime.smack:smack-extensions:4.1.7'*/
+    //Retrofit for call API
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    //Circle imagesview
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //Event bus
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //Piccaso for image
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //For get last seen time convertion
+    compile 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
+    //Glide for Image
+    //compile 'com.github.bumptech.glide:glide:4.3.1'
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    // for bottomsheet
+    compile 'com.flipboard:bottomsheet-core:1.5.0'
+    compile 'com.flipboard:bottomsheet-commons:1.5.0'
+    // optional
+
+    //File compress
+  //  compile 'id.zelory:compressor:2.1.0'
+    //RxJava
+    compile 'io.reactivex.rxjava2:rxjava:2.0.1'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+}
+

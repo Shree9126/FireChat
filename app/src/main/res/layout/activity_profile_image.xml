@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/dim1"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/profile_image"
+            android:scaleType="fitCenter"
+            android:layout_width="match_parent"
+            android:src="@drawable/ic_def_profile"
+            android:layout_height="400dp" />
+    </LinearLayout>
+
+
+    <include layout="@layout/bottomsheetlayout"/>
+</LinearLayout>
